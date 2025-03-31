@@ -30,6 +30,9 @@
         <language tag="el-GR">language/el-GR/plg_captcha_altcha.ini</language>
         <language tag="el-GR">language/el-GR/plg_captcha_altcha.sys.ini</language>
 
+        <language tag="nl-NL">language/nl-NL/plg_captcha_altcha.ini</language>
+        <language tag="nl-NL">language/nl-NL/plg_captcha_altcha.sys.ini</language>
+
         <language tag="tr-TR">language/tr-TR/plg_captcha_altcha.ini</language>
         <language tag="tr-TR">language/tr-TR/plg_captcha_altcha.sys.ini</language>
     </languages>
