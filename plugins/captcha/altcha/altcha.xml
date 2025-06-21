@@ -35,6 +35,9 @@
 
         <language tag="tr-TR">language/tr-TR/plg_captcha_altcha.ini</language>
         <language tag="tr-TR">language/tr-TR/plg_captcha_altcha.sys.ini</language>
+        
+        <language tag="de-DE">language/de-DE/plg_captcha_altcha.ini</language>
+        <language tag="de-DE">language/de-DE/plg_captcha_altcha.sys.ini</language>
     </languages>
 
     <updateservers>
