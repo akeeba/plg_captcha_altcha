@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="plugin" group="captcha" method="upgrade">
     <name>plg_captcha_altcha</name>
-    <version>1.0.1</version>
-    <creationDate>2025-03-12</creationDate>
+    <version>2.0.0</version>
+    <creationDate>2025-10-10</creationDate>
     <author>Akeeba Ltd</author>
     <authorEmail>nicholas_NOSPAM@akeeba.com</authorEmail>
     <authorUrl>https://www.akeeba.com</authorUrl>
