@@ -27,7 +27,6 @@ return new class () implements ServiceProviderInterface {
 		$container->set(
 			PluginInterface::class,
 			fn(Container $container) => new Altcha(
-				$container->get(DispatcherInterface::class),
 				(array) PluginHelper::getPlugin('captcha', 'altcha'),
 				Factory::getApplication()
 			)

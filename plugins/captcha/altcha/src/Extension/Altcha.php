@@ -14,6 +14,7 @@ use AltchaOrg\Altcha\Altcha as AltchaApi;
 use AltchaOrg\Altcha\Challenge;
 use AltchaOrg\Altcha\ChallengeOptions;
 use DateInterval;
+use Exception;
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Application\CMSWebApplicationInterface;
 use Joomla\CMS\Date\Date;
@@ -23,7 +24,6 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Session\Session;
-use Joomla\Event\DispatcherInterface;
 use Joomla\Event\Event;
 use Joomla\Event\SubscriberInterface;
 use Joomla\Session\SessionInterface;
@@ -37,9 +37,19 @@ use JsonException;
 final class Altcha extends CMSPlugin implements SubscriberInterface
 {
 	/** @inheritDoc */
-	public function __construct(DispatcherInterface $dispatcher, array $config = [], CMSApplication $app = null)
+	public function __construct(array $config = [], CMSApplication $app = null)
 	{
-		parent::__construct($dispatcher, $config);
+		if (version_compare(JVERSION, '5.9999.9999', 'lt'))
+		{
+			// Joomla! 5: legacy plugin initialisation with a Dispatcher object
+			parent::__construct($app->getDispatcher(), $config);
+		}
+		else
+		{
+			// Joomla! 6 and later: plugin initialisation with just the plugin config
+			parent::__construct($config);
+		}
+
 
 		$this->setApplication($app);
 		$this->processExpiration();
@@ -58,7 +68,9 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 	 * @param   Event  $e  The event we are handling
 	 *
 	 * @return  void
-	 * @since   1.0.0
+	 * @since        1.0.0
+	 *
+	 * @noinspection PhpUnused
 	 */
 	public function ajaxHandler(Event $e)
 	{
@@ -98,7 +110,8 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 	 * @param   string  $id  The id of the field.
 	 *
 	 * @return  bool  True on success (always).
-	 * @since   1.0.0
+	 * @since        1.0.0
+	 * @noinspection PhpUnused
 	 */
 	public function onInit(string $id = 'altcha_1'): bool
 	{
@@ -151,22 +164,20 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 		?string $name = null, string $id = 'altcha_1', string $class = ''
 	): string
 	{
-		$autoMode      = $this->params->get('auto', 'onsubmit');
-		$delay         = $this->params->get('delay', 0);
-		$hideFooter    = $this->params->get('hidefooter', 0) == 1;
-		$hideLogo      = $this->params->get('hidelogo', 0) == 1;
+		$autoMode   = $this->params->get('auto', 'onsubmit');
+		$delay      = $this->params->get('delay', 0);
+		$hideFooter = $this->params->get('hidefooter', 0) == 1;
+		$hideLogo   = $this->params->get('hidelogo', 0) == 1;
 
 		$this->loadLanguage('plg_captcha_altcha');
 
-		// TODO style="..." for custom CSS variables
-
 		$htmlAttributes = [
-			'name'          => $name,
-			'id'            => $id,
-			'class'         => $class,
-			'challengeurl'  => $this->getChallengeUrl($id),
-			'delay'         => $delay,
-			'strings'       => json_encode(
+			'name'         => $name,
+			'id'           => $id,
+			'class'        => $class,
+			'challengeurl' => $this->getChallengeUrl($id),
+			'delay'        => $delay,
+			'strings'      => json_encode(
 				[
 					'ariaLinkLabel' => Text::_('PLG_CAPTCHA_ALTCHA_ARIALINKLABEL'),
 					'error'         => Text::_('PLG_CAPTCHA_ALTCHA_ERROR'),
@@ -178,9 +189,9 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 					'waitAlert'     => Text::_('PLG_CAPTCHA_ALTCHA_WAITALERT'),
 				]
 			),
-			'hidefooter'    => (bool) $hideFooter,
-			'hidelogo'      => (bool) $hideLogo,
-			'auto'          => $autoMode,
+			'hidefooter'   => (bool) $hideFooter,
+			'hidelogo'     => (bool) $hideLogo,
+			'auto'         => $autoMode,
 		];
 
 		return sprintf(
@@ -195,7 +206,8 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 	 * @param   string|null  $code  The answer.
 	 *
 	 * @return  bool
-	 * @since   1.0.0
+	 * @since        1.0.0
+	 * @noinspection PhpUnused
 	 */
 	public function onCheckAnswer(?string $code = null): bool
 	{
@@ -209,7 +221,7 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 		{
 			$code = @base64_decode($code);
 		}
-		catch (\Exception $e)
+		catch (Exception $e)
 		{
 			$code = null;
 		}
@@ -309,7 +321,8 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 	 * @param   \SimpleXMLElement  $element  XML form definition
 	 *
 	 * @return  void
-	 * @since   1.0.0
+	 * @since        1.0.0
+	 * @noinspection PhpUnused
 	 */
 	public function onSetupField(CaptchaField $field, \SimpleXMLElement $element)
 	{
@@ -343,6 +356,7 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 	 * @param   string  $id  The CAPTCHA field ID
 	 *
 	 * @return  Challenge
+	 * @throws  Exception
 	 * @since   1.0.0
 	 */
 	private function generateChallenge(string $id = 'altcha_1'): Challenge
@@ -448,8 +462,9 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 	 *
 	 * @since   1.0
 	 */
-	private function arrayToString(array $array, string $innerGlue = '=', string $outerGlue = ' ', $keepOuterKey = false
-	)
+	private function arrayToString(
+		array $array, string $innerGlue = '=', string $outerGlue = ' ', bool $keepOuterKey = false
+	): string
 	{
 		$output = [];
 
@@ -482,6 +497,15 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 		return implode($outerGlue, $output);
 	}
 
+	/**
+	 * Generates custom CSS rules based on specified parameters and returns the CSS string.
+	 *
+	 * @param   bool  $darkMode  Indicates whether to generate CSS for Dark Mode. Defaults to false.
+	 *
+	 * @return  string|null  The generated custom CSS string, or null if no CSS is enabled or no valid parameters are
+	 *                       provided.
+	 * @since   1.0
+	 */
 	private function getCSS(bool $darkMode = false): ?string
 	{
 		$suffix  = $darkMode ? '_dark' : '';

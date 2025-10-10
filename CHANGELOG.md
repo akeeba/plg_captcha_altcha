@@ -1,6 +1,7 @@
-# ALTCHA 1.0.2
+# ALTCHA 2.0.0
 
 * Updated ALTCHA to 2.2.4
+* Full Joomla 6 compatibility
 
 # ALTCHA 1.0.1
 
