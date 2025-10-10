@@ -7,6 +7,6 @@
     "url": "https://github.com/akeeba/plg_captcha_altcha.git"
   },
   "dependencies": {
-    "altcha": "^1.2.0"
+    "altcha": "^2.0.0"
   }
 }
