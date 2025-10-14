@@ -37,7 +37,7 @@ use JsonException;
 final class Altcha extends CMSPlugin implements SubscriberInterface
 {
 	/** @inheritDoc */
-	public function __construct(array $config = [], CMSApplication $app = null)
+	public function __construct(array $config = [], ?CMSApplication $app = null)
 	{
 		if (version_compare(JVERSION, '5.9999.9999', 'lt'))
 		{
