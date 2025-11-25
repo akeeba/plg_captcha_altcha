@@ -19,5 +19,4 @@ Go to System, Global Configuration and select this plugin as your Default CAPTCH
 
 ### Changelog
 
-* Updated ALTCHA to 2.2.4
-* Full Joomla 6 compatibility
+* PHP 8.5 compatibility
