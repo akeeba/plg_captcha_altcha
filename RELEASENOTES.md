@@ -6,8 +6,8 @@ This plugin implements the open-source, self-hosted, GDPR-compliant ALTCHA syste
 
 ### Requirements
 
-* Joomla 5.2 to 6.0.
-* PHP 8.1 to 8.5.
+* Joomla 5.4 to 6.0.
+* PHP 8.2 to 8.5.
 
 ### Usage
 

@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
+<!--
+  ~ @package     plg_captcha_altcha
+  ~ @copyright   (C) 2026 Akeeba Ltd
+  ~ @license     GPL-3.0+
+  -->
+
 <project name="CaptchaAltcha" description="ALTCHA Plugin for Joomla!" default="git" >
 	<import file="${phing.dir}/../buildfiles/phing/common.xml" />
 
@@ -22,10 +28,14 @@
 
 				<exclude name="vendor/altcha-org/altcha/.github/**" />
 				<exclude name="vendor/altcha-org/altcha/tests/**" />
+				<exclude name="vendor/altcha-org/altcha/.editorconfig" />
 				<exclude name="vendor/altcha-org/altcha/.gitignore" />
+				<exclude name="vendor/altcha-org/altcha/.php-cs-fixer.dist.php" />
 				<exclude name="vendor/altcha-org/altcha/CODE_OF_CONDUCT.md" />
 				<exclude name="vendor/altcha-org/altcha/composer.lock" />
 				<exclude name="vendor/altcha-org/altcha/CONTRIBUTING.md" />
+				<exclude name="vendor/altcha-org/altcha/phpstan.neon" />
+				<exclude name="vendor/altcha-org/altcha/phpstan-baseline.neon" />
 				<exclude name="vendor/altcha-org/altcha/phpunit.xml.dist" />
 			</fileset>
 			<fileset dir="${dirs.root}">

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ @package     plg_captcha_altcha
+  ~ @copyright   (C) 2026 Akeeba Ltd
+  ~ @license     GPL-3.0+
+  -->
+
 <extension type="plugin" group="captcha" method="upgrade">
     <name>plg_captcha_altcha</name>
-    <version>2.0.1</version>
-    <creationDate>2025-11-26</creationDate>
+    <version>2.1.0</version>
+    <creationDate>2025-12-21</creationDate>
     <author>Akeeba Ltd</author>
     <authorEmail>nicholas_NOSPAM@akeeba.com</authorEmail>
     <authorUrl>https://www.akeeba.com</authorUrl>

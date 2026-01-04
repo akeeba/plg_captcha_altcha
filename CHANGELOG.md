@@ -1,3 +1,9 @@
+# ALTCHA 2.1.0
+
+* Update ALTCHA to 2.3.0
+* Minimum Joomla! version if 5.4
+* Minimum PHP is 8.2 (ALTCHA requirement)
+
 # ALTCHA 2.0.1
 
 * PHP 8.5 compatibility
