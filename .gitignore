@@ -1,3 +1,4 @@
+/.idea/laravel-idea.xml
 /node_modules/**
 /plugins/captcha/altcha/vendor/**
 /release/**
