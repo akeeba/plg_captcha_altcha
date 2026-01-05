@@ -19,4 +19,6 @@ Go to System, Global Configuration and select this plugin as your Default CAPTCH
 
 ### Changelog
 
-* PHP 8.5 compatibility
+* Update ALTCHA to 2.3.0
+* Minimum Joomla! version if 5.4
+* Minimum PHP is 8.2 (ALTCHA requirement)
