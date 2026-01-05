@@ -1,3 +1,7 @@
+# ALTCHA 2.1.1
+
+* Packaging error in 2.1.0 prevented the plugin from working
+
 # ALTCHA 2.1.0
 
 * Update ALTCHA to 2.3.0

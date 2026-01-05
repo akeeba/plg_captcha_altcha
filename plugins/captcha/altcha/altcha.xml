@@ -7,8 +7,8 @@
 
 <extension type="plugin" group="captcha" method="upgrade">
     <name>plg_captcha_altcha</name>
-    <version>2.1.0</version>
-    <creationDate>2026-01-05</creationDate>
+    <version>2.1.1</version>
+    <creationDate>2026-01-06</creationDate>
     <author>Akeeba Ltd</author>
     <authorEmail>nicholas_NOSPAM@akeeba.com</authorEmail>
     <authorUrl>https://www.akeeba.com</authorUrl>

@@ -9,10 +9,10 @@ namespace Akeeba\Plugin\Captcha\Altcha\Extension;
 
 defined('_JEXEC') || die;
 
-use AltchaOrg\Altcha\Algorithm;
 use AltchaOrg\Altcha\Altcha as AltchaApi;
 use AltchaOrg\Altcha\Challenge;
 use AltchaOrg\Altcha\ChallengeOptions;
+use AltchaOrg\Altcha\Hasher\Algorithm;
 use DateInterval;
 use Exception;
 use Joomla\CMS\Application\CMSApplication;
@@ -24,6 +24,7 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Session\Session;
+use Joomla\CMS\Uri\Uri;
 use Joomla\Event\Event;
 use Joomla\Event\SubscriberInterface;
 use Joomla\Session\SessionInterface;
@@ -87,7 +88,17 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 			exit();
 		}
 
-		$challenge     = $this->generateChallenge($id);
+		try
+		{
+			$challenge = $this->generateChallenge($id);
+		}
+		catch (\Throwable $e)
+		{
+			$challenge = [
+				'Exception' => $e->getMessage()
+			];
+		}
+
 		$challengeJson = json_encode($challenge);
 
 		/**
@@ -123,8 +134,7 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 		}
 
 		$initialised = true;
-
-		$app = $this->getApplication();
+		$app         = $this->getApplication();
 
 		if (!$app instanceof CMSWebApplicationInterface)
 		{
@@ -174,6 +184,7 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 		$htmlAttributes = [
 			'name'         => $name,
 			'id'           => $id,
+			'credentials'  => 'same-origin',
 			'class'        => $class,
 			'challengeurl' => $this->getChallengeUrl($id),
 			'delay'        => $delay,
@@ -298,20 +309,17 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 			return false;
 		}
 
-		// TODO Check that the communicated algorithm, challenge, salt, and signature are valid
-
 		// Verify the solution
-		return AltchaApi::verifySolution(
-			[
-				'algorithm' => $challenge->algorithm,
-				'challenge' => $challenge->challenge,
-				'number'    => $decoded->number,
-				'salt'      => $challenge->salt,
-				'signature' => $challenge->signature,
-			],
-			$this->getApplication()->get('secret'),
-			true
-		);
+		$altcha  = new AltchaApi($this->getApplication()->get('secret'));
+		$payload = [
+			'algorithm' => $challenge->algorithm,
+			'challenge' => $challenge->challenge,
+			'number'    => $decoded->number,
+			'salt'      => $challenge->salt,
+			'signature' => $challenge->signature,
+		];
+
+		return $altcha->verifySolution($payload, true);
 	}
 
 	/**
@@ -362,25 +370,24 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 	private function generateChallenge(string $id = 'altcha_1'): Challenge
 	{
 		$keyHash       = hash('sha256', $id);
-		$hashAlgorithm = $this->params->get('hash', Algorithm::SHA512);
+		$hashAlgorithm = Algorithm::tryFrom($this->params->get('hash', Algorithm::SHA512->name)) ?? Algorithm::SHA512;
 		$maxNumber     = $this->params->get('maxnumber', 50000);
 		$saltLength    = $this->params->get('saltlength', 16);
 		$expires       = $this->params->get('expires', 'PT1H');
 
 		$options = new ChallengeOptions(
+			$hashAlgorithm,
+			$maxNumber,
+			Date::getInstance()->add(new DateInterval($expires)),
 			[
-				'algorithm'  => $hashAlgorithm,
-				'saltLength' => $saltLength,
-				'hmacKey'    => $this->getApplication()->get('secret'),
-				'maxNumber'  => $maxNumber,
-				'expires'    => Date::getInstance()->add(new DateInterval($expires)),
-				'params'     => [
-					'keyHash' => $keyHash,
-				],
-			]
+				'keyHash' => $keyHash,
+			],
+			$saltLength
 		);
 
-		$challenge = AltchaApi::createChallenge($options);
+		$altcha    = new AltchaApi($this->getApplication()->get('secret'));
+		$challenge = $altcha->createChallenge($options);
+
 		Factory::getContainer()
 			->get(SessionInterface::class)
 			->set('altcha_challenge.' . $keyHash, json_encode($challenge));

@@ -1,9 +1,3 @@
-/*
- * @package     plg_captcha_altcha
- * @copyright   (C) 2026 Akeeba Ltd
- * @license     GPL-3.0+
- */
-
 const $l = "5";
 typeof window < "u" && ((window.__svelte ??= {}).v ??= /* @__PURE__ */ new Set()).add($l);
 const kl = 1, Sl = 4, Tl = 8, Nl = 16, Dl = 1, Ll = 2, Mn = "[", Gr = "[!", Zr = "]", pt = {}, oe = Symbol(), Pl = "http://www.w3.org/1999/xhtml", Nr = !1;
