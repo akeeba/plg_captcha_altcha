@@ -1,7 +1,7 @@
 <component name="CopyrightManager">
   <copyright>
-    <option name="allowReplaceRegexp" value="@copyright" />
-    <option name="keyword" value="@copyright" />
+    <option name="allowReplaceRegexp" value="Copyright.*20[0-9]{2,2}.*(Nicholas|Akeeba)" />
+    <option name="keyword" value="Copyright.*20[0-9]{2,2}.*(Nicholas|Akeeba)" />
     <option name="notice" value="@package     plg_captcha_altcha&#10;@copyright   (C) &amp;#36;originalComment.match(&quot;@copyright   \(C\) (\d+)&quot;, 1, &quot;-&quot;, &quot;&amp;#36;today.year&quot;)&amp;#36;today.year Akeeba Ltd&#10;@license     GPL-3.0+" />
     <option name="myName" value="Akeeba" />
   </copyright>

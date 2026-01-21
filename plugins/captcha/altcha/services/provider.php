@@ -18,12 +18,6 @@ use Joomla\Event\DispatcherInterface;
 return new class () implements ServiceProviderInterface {
 	public function register(Container $container)
 	{
-		// Just in case Joomla! removes this in the future...
-		if (!class_exists(\AltchaOrg\Altcha\Altcha::class))
-		{
-			require_once __DIR__ . '/../vendor/autoload.php';
-		}
-
 		$container->set(
 			PluginInterface::class,
 			fn(Container $container) => new Altcha(

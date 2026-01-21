@@ -37,11 +37,23 @@
 		"ext-simplexml": "*",
 		"altcha-org/altcha": "^v1.3.1"
 	},
+	"require-dev": {
+		"coenjacobs/mozart": "^0.7.1"
+	},
 	"config": {
-		"vendor-dir": "plugins/captcha/altcha/vendor",
 		"optimize-autoloader": false,
 		"platform": {
 			"php": "8.2.999"
+		}
+	},
+	"extra": {
+		"mozart": {
+			"dep_namespace": "Akeeba\\Plugin\\Captcha\\Altcha\\Dependency\\",
+			"dep_directory": "//plugins/captcha/altcha/src/Dependency/",
+			"classmap_directory": "//plugins/captcha/altcha/src/Dependency/classmap/",
+			"packages": [
+				"altcha-org/altcha"
+			]
 		}
 	}
 }

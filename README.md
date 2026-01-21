@@ -35,7 +35,7 @@ For more detailed usage information take a look at our [documentation](https://g
 
 ALTCHA for Joomla! – A Joomla! plugin to implement ALTCHA, the Open Source, proof-of-work, self-hosted CAPTCHA alternative.
 
-Copyright (C) 2025 Akeeba Ltd
+Copyright (C) 2025-2026 Akeeba Ltd
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

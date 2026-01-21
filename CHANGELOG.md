@@ -1,3 +1,7 @@
+# ALTCHA 2.1.2
+
+* Workaround for conflicts with Joomla 6.1
+
 # ALTCHA 2.1.1
 
 * Packaging error in 2.1.0 prevented the plugin from working

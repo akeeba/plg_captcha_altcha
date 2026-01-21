@@ -20,7 +20,6 @@
     <files>
         <folder plugin="altcha">services</folder>
         <folder>src</folder>
-        <folder>vendor</folder>
     </files>
 
     <media folder="media" destination="plg_captcha_altcha">

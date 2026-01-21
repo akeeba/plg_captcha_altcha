@@ -9,10 +9,10 @@ namespace Akeeba\Plugin\Captcha\Altcha\Extension;
 
 defined('_JEXEC') || die;
 
-use AltchaOrg\Altcha\Altcha as AltchaApi;
-use AltchaOrg\Altcha\Challenge;
-use AltchaOrg\Altcha\ChallengeOptions;
-use AltchaOrg\Altcha\Hasher\Algorithm;
+use Akeeba\Plugin\Captcha\Altcha\Dependency\AltchaOrg\Altcha\Altcha as AltchaApi;
+use Akeeba\Plugin\Captcha\Altcha\Dependency\AltchaOrg\Altcha\Challenge;
+use Akeeba\Plugin\Captcha\Altcha\Dependency\AltchaOrg\Altcha\ChallengeOptions;
+use Akeeba\Plugin\Captcha\Altcha\Dependency\AltchaOrg\Altcha\Hasher\Algorithm;
 use DateInterval;
 use Exception;
 use Joomla\CMS\Application\CMSApplication;
@@ -24,7 +24,6 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Session\Session;
-use Joomla\CMS\Uri\Uri;
 use Joomla\Event\Event;
 use Joomla\Event\SubscriberInterface;
 use Joomla\Session\SessionInterface;
