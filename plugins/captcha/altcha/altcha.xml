@@ -43,6 +43,18 @@
         
         <language tag="de-DE">language/de-DE/plg_captcha_altcha.ini</language>
         <language tag="de-DE">language/de-DE/plg_captcha_altcha.sys.ini</language>
+
+        <language tag="es-ES">language/es-ES/plg_captcha_altcha.ini</language>
+        <language tag="es-ES">language/es-ES/plg_captcha_altcha.sys.ini</language>
+
+        <language tag="fr-FR">language/fr-FR/plg_captcha_altcha.ini</language>
+        <language tag="fr-FR">language/fr-FR/plg_captcha_altcha.sys.ini</language>
+
+        <language tag="it-IT">language/it-IT/plg_captcha_altcha.ini</language>
+        <language tag="it-IT">language/it-IT/plg_captcha_altcha.sys.ini</language>
+
+        <language tag="pt-PT">language/pt-PT/plg_captcha_altcha.ini</language>
+        <language tag="pt-PT">language/pt-PT/plg_captcha_altcha.sys.ini</language>
     </languages>
 
     <updateservers>
