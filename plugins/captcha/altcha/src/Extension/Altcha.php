@@ -34,6 +34,7 @@ use JsonException;
  *
  * @since  1.0.0
  */
+#[AllowUnauthorizedAdministratorAccess]
 final class Altcha extends CMSPlugin implements SubscriberInterface
 {
 	/** @inheritDoc */

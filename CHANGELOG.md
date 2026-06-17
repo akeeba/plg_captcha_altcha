@@ -1,6 +1,7 @@
 # ALTCHA 2.1.2
 
 * Workaround for conflicts with Joomla 6.1
+* Fix CAPTCHA AJAX handler being inaccessible without an administrator session
 
 # ALTCHA 2.1.1
 
