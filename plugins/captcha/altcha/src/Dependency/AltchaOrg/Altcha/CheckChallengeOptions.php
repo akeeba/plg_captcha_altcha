@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Akeeba\Plugin\Captcha\Altcha\Dependency\AltchaOrg\Altcha;
 
+defined('_JEXEC') || die;
+
 use Akeeba\Plugin\Captcha\Altcha\Dependency\AltchaOrg\Altcha\Hasher\Algorithm;
 
 class CheckChallengeOptions extends BaseChallengeOptions

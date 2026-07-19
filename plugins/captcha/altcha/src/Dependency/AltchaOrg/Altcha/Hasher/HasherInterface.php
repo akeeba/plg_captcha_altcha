@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Akeeba\Plugin\Captcha\Altcha\Dependency\AltchaOrg\Altcha\Hasher;
 
+defined('_JEXEC') || die;
+
 interface HasherInterface
 {
     public function hash(Algorithm $algorithm, string $data): string;

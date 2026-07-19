@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Akeeba\Plugin\Captcha\Altcha\Dependency\AltchaOrg\Altcha\Hasher;
 
+defined('_JEXEC') || die;
+
 enum Algorithm: string
 {
     case SHA1 = 'SHA-1';
