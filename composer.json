@@ -33,7 +33,7 @@
 		}
 	],
 	"require": {
-		"php": "^8.2",
+		"php": ">=8.2 <8.7",
 		"ext-simplexml": "*",
 		"altcha-org/altcha": "^v1.3.1"
 	},
@@ -53,6 +53,36 @@
 			"classmap_directory": "//plugins/captcha/altcha/src/Dependency/classmap/",
 			"packages": [
 				"altcha-org/altcha"
+			]
+		},
+		"akcompat": {
+			"limit_type": "joomla",
+			"limit": ">=5.4.0 <6.2",
+			"locations": [
+				{
+					"file": "plugins/captcha/altcha/altcha.script.php",
+					"type": "variable",
+					"marker": "$minimumPhp",
+					"value": "PHP_MIN"
+				},
+				{
+					"file": "plugins/captcha/altcha/altcha.script.php",
+					"type": "variable",
+					"marker": "$maximumPhp",
+					"value": "PHP_MAX"
+				},
+				{
+					"file": "plugins/captcha/altcha/altcha.script.php",
+					"type": "variable",
+					"marker": "$minimumJoomla",
+					"value": "LIMIT_MIN"
+				},
+				{
+					"file": "plugins/captcha/altcha/altcha.script.php",
+					"type": "variable",
+					"marker": "$maximumJoomla",
+					"value": "LIMIT_MAX"
+				}
 			]
 		}
 	}

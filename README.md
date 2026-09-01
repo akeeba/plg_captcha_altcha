@@ -15,6 +15,8 @@ A Joomla! plugin to implement ALTCHA, the Open Source, proof-of-work, self-hoste
 
 </div>
 
+> ⚠️ **This project is deprecated.** Joomla! 6.1 and later ship ALTCHA as a core CAPTCHA plugin, so this project is no longer needed on those versions. It is only kept for Joomla! 5.4 and 6.0, which lack the core ALTCHA feature, and will receive security updates for those versions only until **October 2027**. After Joomla 7.0 is released and Joomla 5.4 becomes End of Support in mid-October 2027 this project will be considered obsolete.
+
 ## Quick start
 
 [Download](https://github.com/akeeba/plg_captcha_altcha/releases/latest) the extension's ZIP file. Its name is `plg_captcha_altcha-VERSION.zip` where _VERSION_ is the latest version number.

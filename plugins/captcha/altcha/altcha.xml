@@ -17,7 +17,10 @@
     <description>PLG_CAPTCHA_ALTCHA_XML_DESCRIPTION</description>
     <namespace path="src">Akeeba\Plugin\Captcha\Altcha</namespace>
 
+    <scriptfile>altcha.script.php</scriptfile>
+
     <files>
+        <filename>altcha.script.php</filename>
         <folder plugin="altcha">services</folder>
         <folder>src</folder>
     </files>
