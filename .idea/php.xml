@@ -38,7 +38,6 @@
       <path value="$PROJECT_DIR$/vendor/altcha-org/altcha" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="98235076-2459-405a-ba28-6e4ea475e893" timeout="60000" />
