@@ -68,14 +68,11 @@
 
     <config>
         <fields name="params">
-            <fieldset name="basic">
+            <fieldset name="basic" addfieldprefix="Akeeba\Plugin\Captcha\Altcha\Field">
 
                 <field
-                        name="note1"
-                        type="note"
-                        class="alert alert-info"
-                        label="PLG_CAPTCHA_ALTCHA_MADE_IN_EU"
-                        description="PLG_CAPTCHA_ALTCHA_MADE_IN_EU_INFO"
+                        name="deprecationnotice"
+                        type="Deprecationnotice"
                 />
 
                 <field

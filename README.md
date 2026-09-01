@@ -9,13 +9,10 @@ A Joomla! plugin to implement ALTCHA, the Open Source, proof-of-work, self-hoste
 
 </div>
 
-<div style="text-align: end; font-style: italic; color: #999999;">
-
-🇪🇺 Made in the European Union
-
-</div>
-
-> ⚠️ **This project is deprecated.** Joomla! 6.1 and later ship ALTCHA as a core CAPTCHA plugin, so this project is no longer needed on those versions. It is only kept for Joomla! 5.4 and 6.0, which lack the core ALTCHA feature, and will receive security updates for those versions only until **October 2027**. After Joomla 7.0 is released and Joomla 5.4 becomes End of Support in mid-October 2027 this project will be considered obsolete.
+> [!IMPORTANT]
+> This plugin is only supported on Joomla 5.4 and 6.0, and only until **October 15th, 2027**.
+>
+> Joomla! 6.1 and later ship ALTCHA as a core CAPTCHA plugin (CAPTCHA - Proof of Work). This plugin here is only meant to be used on Joomla! 5.4 and 6.0 which lack that core feature, and only until you get to upgrading to Joomla 6.1+ or later. As a result, starting September 1st, 2027 we only offer _security updates for a limited time_. The plugin will become **End of Life on October 15th, 2027**. That's on or a few days around the time Joomla 5.4 itself officially becomes End of Support.
 
 ## Quick start
 

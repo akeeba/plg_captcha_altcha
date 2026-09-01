@@ -36,3 +36,7 @@
 | language override | Sprach-Override |
 | open source | quelloffen |
 | checkbox | Kontrollkästchen |
+| maintained | gepflegt |
+| unsupported | nicht unterstützt |
+| uninstall | deinstallieren |
+| native plugin | natives Plugin |

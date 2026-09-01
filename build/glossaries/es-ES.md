@@ -37,3 +37,7 @@
 | open source | código abierto |
 | checkbox | casilla de verificación |
 | challenge | desafío |
+| maintained | mantenimiento |
+| unsupported | no compatible |
+| uninstall | desinstalar |
+| native plugin | plugin nativo |

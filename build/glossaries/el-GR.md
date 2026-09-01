@@ -37,3 +37,7 @@
 | open source | ανοικτού κώδικα |
 | checkbox | πλαίσιο ελέγχου |
 | challenge | πρόκληση |
+| maintained | συντηρείται |
+| unsupported | δεν υποστηρίζεται |
+| uninstall | απεγκατάσταση |
+| built-in plugin | ενσωματωμένο πρόσθετο |
