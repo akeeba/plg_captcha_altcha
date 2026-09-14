@@ -37,6 +37,28 @@ use JsonException;
 #[AllowUnauthorizedAdministratorAccess]
 final class Altcha extends CMSPlugin implements SubscriberInterface
 {
+	/**
+	 * Validation pattern for the custom CSS dimension parameters (border width/radius, maximum width).
+	 *
+	 * Mirrors the `validate="regex"` rule on the corresponding fields in altcha.xml; kept here as well
+	 * so a value written through any path other than the plugin's own configuration form (Web Services
+	 * API, direct database edit, import) cannot produce malformed CSS output.
+	 *
+	 * @since 2.1.3
+	 */
+	private const REGEX_CSS_DIMENSION = '/^\d+(\.\d+)?(px|em|rem|%|vh|vw)?$/';
+
+	/**
+	 * Validation pattern for the custom CSS colour parameters.
+	 *
+	 * Mirrors the `validate="regex"` rule on the corresponding fields in altcha.xml; kept here as well
+	 * so a value written through any path other than the plugin's own configuration form (Web Services
+	 * API, direct database edit, import) cannot produce malformed CSS output.
+	 *
+	 * @since 2.1.3
+	 */
+	private const REGEX_CSS_COLOR = '/^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$/i';
+
 	/** @inheritDoc */
 	public function __construct(array $config = [], ?CMSApplication $app = null)
 	{
@@ -523,10 +545,13 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 			return null;
 		}
 
-		$controls = [
+		$dimensionControls = [
 			'border_width',
 			'border_radius',
 			'maximum_width',
+		];
+
+		$colorControls = [
 			'color_base',
 			'color_border',
 			'color_text',
@@ -537,12 +562,19 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 
 		$css = '';
 
-		foreach ($controls as $key)
+		foreach ([...$dimensionControls, ...$colorControls] as $key)
 		{
 			$value = $this->params->get($key . $suffix, null);
 			$value = (is_string($value) ? trim($value) : null) ?: null;
 
 			if (empty($value))
+			{
+				continue;
+			}
+
+			$pattern = in_array($key, $dimensionControls, true) ? self::REGEX_CSS_DIMENSION : self::REGEX_CSS_COLOR;
+
+			if (!preg_match($pattern, $value))
 			{
 				continue;
 			}

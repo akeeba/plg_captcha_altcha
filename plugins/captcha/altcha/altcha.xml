@@ -202,6 +202,8 @@
                         label="PLG_CAPTCHA_ALTCHA_FIELD_BORDER_WIDTH_LABEL"
                         description="PLG_CAPTCHA_ALTCHA_FIELD_BORDER_WIDTH_DESC"
                         default="1px"
+                        validate="regex"
+                        regex="^\d+(\.\d+)?(px|em|rem|%|vh|vw)?$"
                         showon="custom_css:1"
                 />
 
@@ -211,6 +213,8 @@
                         label="PLG_CAPTCHA_ALTCHA_FIELD_BORDER_RADIUS_LABEL"
                         description="PLG_CAPTCHA_ALTCHA_FIELD_BORDER_RADIUS_DESC"
                         default="3px"
+                        validate="regex"
+                        regex="^\d+(\.\d+)?(px|em|rem|%|vh|vw)?$"
                         showon="custom_css:1"
                 />
 
@@ -220,6 +224,8 @@
                         label="PLG_CAPTCHA_ALTCHA_FIELD_MAX_WIDTH_LABEL"
                         description="PLG_CAPTCHA_ALTCHA_FIELD_MAX_WIDTH_DESC"
                         default="260px"
+                        validate="regex"
+                        regex="^\d+(\.\d+)?(px|em|rem|%|vh|vw)?$"
                         showon="custom_css:1"
                 />
 
@@ -230,6 +236,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_BASE_DESC"
                         default="#ffffff"
                         keywords="transparent,initial,inherit,currentColor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css:1"
                 />
 
@@ -240,6 +249,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_BORDER_DESC"
                         default="#a0a0a0"
                         keywords="transparent,initial,inherit,currentColor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css:1"
                 />
 
@@ -250,6 +262,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_TEXT_LABEL_DESC"
                         default="currentcolor"
                         keywords="transparent,initial,inherit,currentcolor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css:1"
                 />
 
@@ -260,6 +275,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_BORDER_FOCUS_DESC"
                         default="currentcolor"
                         keywords="transparent,initial,inherit,currentcolor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css:1"
                 />
 
@@ -270,6 +288,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_ERROR_TEXT_DESC"
                         default="#f23939"
                         keywords="transparent,initial,inherit,currentcolor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css:1"
                 />
 
@@ -280,6 +301,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_FOOTER_BG_DESC"
                         default="#f4f4f4"
                         keywords="transparent,initial,inherit,currentcolor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css:1"
                 />
 
@@ -308,6 +332,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_BASE_DESC"
                         default="#222222"
                         keywords="transparent,initial,inherit,currentColor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css_dark:1"
                 />
 
@@ -318,6 +345,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_BORDER_DESC"
                         default="#a0a0a0"
                         keywords="transparent,initial,inherit,currentColor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css_dark:1"
                 />
 
@@ -328,6 +358,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_TEXT_LABEL_DESC"
                         default="currentcolor"
                         keywords="transparent,initial,inherit,currentcolor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css_dark:1"
                 />
 
@@ -338,6 +371,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_BORDER_FOCUS_DESC"
                         default="currentcolor"
                         keywords="transparent,initial,inherit,currentcolor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css_dark:1"
                 />
 
@@ -348,6 +384,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_ERROR_TEXT_DESC"
                         default="#f23939"
                         keywords="transparent,initial,inherit,currentcolor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css_dark:1"
                 />
 
@@ -358,6 +397,9 @@
                         description="PLG_CAPTCHA_ALTCHA_FIELD_COLOR_FOOTER_BG_DESC"
                         default="#393939"
                         keywords="transparent,initial,inherit,currentcolor"
+                        validate="regex"
+                        regex="^(#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?([0-9a-fA-F]{2})?|transparent|initial|inherit|currentcolor)$"
+                        modifiers="i"
                         showon="custom_css_dark:1"
                 />
 

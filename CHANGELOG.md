@@ -1,3 +1,7 @@
+# ALTCHA 2.1.3
+
+* Validate and sanitise custom CSS colour/dimension parameters, both in the form and before output
+
 # ALTCHA 2.1.2
 
 * Workaround for conflicts with Joomla 6.1

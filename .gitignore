@@ -2,3 +2,4 @@
 /node_modules/**
 /vendor/
 /release/**
+/security.md
