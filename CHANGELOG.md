@@ -2,6 +2,7 @@
 
 * Validate and sanitise custom CSS colour/dimension parameters, both in the form and before output
 * Only disclose raw AJAX challenge exception details when JDEBUG is on; show a generic message otherwise
+* Update bundled ALTCHA PHP library from 1.3.1 to 1.3.3
 
 # ALTCHA 2.1.2
 

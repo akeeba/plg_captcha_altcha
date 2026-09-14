@@ -4,24 +4,23 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7df81d4308bb98ac7212e047e2cfef89",
+    "content-hash": "3c4919e4603ea98cc0cec57a60457cd7",
     "packages": [
         {
             "name": "altcha-org/altcha",
-            "version": "v1.3.1",
+            "version": "v1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/altcha-org/altcha-lib-php.git",
-                "reference": "9e9e70c864a9db960d071c77c778be0c9ff1a4d0"
+                "reference": "9a9b98c48dea0b2e8c353ea991d5f5627cbdab36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/altcha-org/altcha-lib-php/zipball/9e9e70c864a9db960d071c77c778be0c9ff1a4d0",
-                "reference": "9e9e70c864a9db960d071c77c778be0c9ff1a4d0",
+                "url": "https://api.github.com/repos/altcha-org/altcha-lib-php/zipball/9a9b98c48dea0b2e8c353ea991d5f5627cbdab36",
+                "reference": "9a9b98c48dea0b2e8c353ea991d5f5627cbdab36",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
                 "php": ">=8.2"
             },
             "require-dev": {
@@ -29,7 +28,7 @@
                 "phpstan/extension-installer": "^1.4",
                 "phpstan/phpstan": "^2.1",
                 "phpstan/phpstan-phpunit": "^2.0",
-                "phpunit/phpunit": "^11.5"
+                "phpunit/phpunit": "^11.5.50"
             },
             "type": "library",
             "autoload": {
@@ -49,9 +48,9 @@
             ],
             "support": {
                 "issues": "https://github.com/altcha-org/altcha-lib-php/issues",
-                "source": "https://github.com/altcha-org/altcha-lib-php/tree/v1.3.1"
+                "source": "https://github.com/altcha-org/altcha-lib-php/tree/v1.3.3"
             },
-            "time": "2025-12-13T10:03:53+00:00"
+            "time": "2026-04-02T12:13:35+00:00"
         }
     ],
     "packages-dev": [
@@ -1227,7 +1226,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2",
+        "php": ">=8.2 <8.7",
         "ext-simplexml": "*"
     },
     "platform-dev": {},
