@@ -10,6 +10,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **The `maxnumber` field is deliberately stripped** from the AJAX challenge response, so that the proof-of-work difficulty is not leaked to the client.
 - **Challenges are single-use.** They are stored in the Joomla session under `altcha_challenge.{keyHash}` to prevent replay attacks.
 - There are no automated tests in this repository.
+- **Before performing any security audit of this repository, read `.claude/security-audit-triage.md`.**
+  It records findings from prior audits that were explicitly ruled not to be issues (with the reasoning),
+  so they aren't re-reported as new findings. Add new entries to it whenever a future audit finding gets
+  a "not an issue" ruling from the project owner.
 
 ## Code Style
 
