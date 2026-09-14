@@ -1,6 +1,7 @@
 # ALTCHA 2.1.3
 
 * Validate and sanitise custom CSS colour/dimension parameters, both in the form and before output
+* Only disclose raw AJAX challenge exception details when JDEBUG is on; show a generic message otherwise
 
 # ALTCHA 2.1.2
 

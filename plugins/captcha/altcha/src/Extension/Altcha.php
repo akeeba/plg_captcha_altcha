@@ -110,14 +110,25 @@ final class Altcha extends CMSPlugin implements SubscriberInterface
 			exit();
 		}
 
+		$this->loadLanguage('plg_captcha_altcha');
+
 		try
 		{
 			$challenge = $this->generateChallenge($id);
 		}
 		catch (\Throwable $e)
 		{
+			/**
+			 * Only disclose the raw exception message when JDEBUG is enabled, for troubleshooting
+			 * purposes. This endpoint is reachable by unauthenticated visitors, so on a production
+			 * site (JDEBUG off) we must not leak internal error detail to them.
+			 *
+			 * @since 2.1.3
+			 */
 			$challenge = [
-				'Exception' => $e->getMessage()
+				'Exception' => (defined('JDEBUG') && JDEBUG)
+					? $e->getMessage()
+					: Text::_('PLG_CAPTCHA_ALTCHA_ERR_CHALLENGE_GENERATION_FAILED'),
 			];
 		}
 
