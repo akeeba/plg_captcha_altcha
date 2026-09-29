@@ -82,6 +82,30 @@
 					"type": "variable",
 					"marker": "$maximumJoomla",
 					"value": "LIMIT_MAX"
+				},
+				{
+					"file": "plugins/captcha/altcha/services/provider.php",
+					"type": "variable",
+					"marker": "$minimumPhp",
+					"value": "PHP_MIN"
+				},
+				{
+					"file": "plugins/captcha/altcha/services/provider.php",
+					"type": "variable",
+					"marker": "$maximumPhp",
+					"value": "PHP_MAX"
+				},
+				{
+					"file": "plugins/captcha/altcha/services/provider.php",
+					"type": "variable",
+					"marker": "$minimumJoomla",
+					"value": "LIMIT_MIN"
+				},
+				{
+					"file": "plugins/captcha/altcha/services/provider.php",
+					"type": "variable",
+					"marker": "$maximumJoomla",
+					"value": "LIMIT_MAX"
 				}
 			]
 		}

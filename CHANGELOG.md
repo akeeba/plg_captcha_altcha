@@ -1,3 +1,7 @@
+# ALTCHA 2.1.4
+
+* Plugin no longer loads if the site is moved to an unsupported PHP or Joomla! version after installation
+
 # ALTCHA 2.1.3
 
 * Validate and sanitise custom CSS colour/dimension parameters, both in the form and before output
