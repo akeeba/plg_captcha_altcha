@@ -22,7 +22,7 @@ return new class () implements ServiceProviderInterface {
 		$minimumPhp    = '8.2.0';
 		$maximumPhp    = '8.7';
 		$minimumJoomla = '5.4.0';
-		$maximumJoomla = '6.2';
+		$maximumJoomla = '6.3';
 
 		if (
 			version_compare(PHP_VERSION, $minimumPhp, 'lt')

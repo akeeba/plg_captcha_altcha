@@ -6,7 +6,7 @@ This plugin implements the open-source, self-hosted, GDPR-compliant ALTCHA syste
 
 ### Requirements
 
-* Joomla 5.4 to 6.1.
+* Joomla 5.4 to 6.2.
 * PHP 8.2 to 8.6.
 
 ### Usage
@@ -19,6 +19,6 @@ Go to System, Global Configuration and select this plugin as your Default CAPTCH
 
 ### Changelog
 
-* Validate and sanitise custom CSS colour/dimension parameters, both in the form and before output
-* Only disclose raw AJAX challenge exception details when JDEBUG is on; show a generic message otherwise
-* Update bundled ALTCHA PHP library from 1.3.1 to 1.3.3
+* Joomla! 6.2 is now a supported version
+* Cannot save plugin options: "RegexRule has invalid regex" error (regression in 2.1.3)
+* Plugin no longer loads if the site is moved to an unsupported PHP or Joomla! version after installation

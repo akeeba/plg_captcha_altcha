@@ -36,7 +36,7 @@ class PlgCaptchaAltchaInstallerScript
 	 * @var   string
 	 * @since 2.1.3
 	 */
-	private string $maximumJoomla = '6.2';
+	private string $maximumJoomla = '6.3';
 
 	/**
 	 * The minimum PHP version required to install this plugin.
