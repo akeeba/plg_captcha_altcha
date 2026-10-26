@@ -14,6 +14,56 @@
         <folder>captcha</folder>
 
         <client>site</client>
+        <version>2.1.4</version>
+
+        <downloads>
+            <downloadurl type="full" format="zip">
+                <![CDATA[https://github.com/akeeba/plg_captcha_altcha/releases/download/2.1.4/plg_captcha_altcha-2.1.4.zip]]>
+            </downloadurl>
+        </downloads>
+
+        <tags>
+            <tag>stable</tag>
+        </tags>
+
+        <targetplatform name="joomla" version="5.4|6.[012]"/>
+        <php_minimum>8.2.0</php_minimum>
+        <supported_databases mysql="5.6" mariadb="10.1" postgresql="11.0"/>
+    </update>
+    <update>
+        <name>CAPTCHA - ALTCHA Updates</name>
+        <description>Joomla! plugin to implement ALTCHA</description>
+
+        <element>altcha</element>
+        <type>plugin</type>
+        <folder>captcha</folder>
+
+        <client>site</client>
+        <version>2.1.3</version>
+
+        <downloads>
+            <downloadurl type="full" format="zip">
+                <![CDATA[https://github.com/akeeba/plg_captcha_altcha/releases/download/2.1.3/plg_captcha_altcha-2.1.3.zip]]>
+            </downloadurl>
+        </downloads>
+
+        <tags>
+            <tag>stable</tag>
+        </tags>
+
+        <targetplatform name="joomla" version="5.4|6.[01]"/>
+        <php_minimum>8.2.0</php_minimum>
+        <supported_databases mysql="5.6" mariadb="10.1" postgresql="11.0"/>
+    </update>
+    <update>
+        <name>CAPTCHA - ALTCHA Updates</name>
+        <description>Joomla! plugin to implement ALTCHA</description>
+
+        <element>altcha</element>
+        <type>plugin</type>
+        <folder>captcha</folder>
+
+        <client>site</client>
         <version>2.1.2</version>
 
         <downloads>
