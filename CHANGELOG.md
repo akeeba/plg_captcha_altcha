@@ -1,5 +1,6 @@
 # ALTCHA 2.1.4
 
+* Cannot save plugin options: "RegexRule has invalid regex" error (regression in 2.1.3)
 * Plugin no longer loads if the site is moved to an unsupported PHP or Joomla! version after installation
 
 # ALTCHA 2.1.3
